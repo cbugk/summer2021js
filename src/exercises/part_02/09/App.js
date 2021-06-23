@@ -12,7 +12,7 @@ const App = () => {
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
 
-    const updatePersonsFiltered = (text, personArr) => setPersonsFiltered(personArr.filter(p => p.name.toUpperCase().includes(text)))
+    const updatePersonsFiltered = (text, personArr) => setPersonsFiltered(personArr.filter(p => p.name.toUpperCase().includes(text.toUpperCase())))
     const addPerson = (event) => {
         event.preventDefault()
         if (persons.map(p => p.name === newName).includes(true)) {
@@ -30,19 +30,21 @@ const App = () => {
         }
     }
     const handleNameChanged = (event) => {
+        event.preventDefault()
         setNewName(event.target.value)
     }
     const handleNumberChanged = (event) => {
+        event.preventDefault()
         setNewNumber(event.target.value)
     }
     const handleSearchChanged = (event) => {
+        event.preventDefault()
         let str = event.target.value
         setNewSearch(str)
         if (!str) {
             setPersonsFiltered(persons)
             return
         }
-        str = str.toUpperCase()
         updatePersonsFiltered(str, persons)
     }
 
