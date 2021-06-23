@@ -25,6 +25,7 @@ const App = () => {
             const personsCache = persons.concat(personObject)
             setPersons(personsCache)
             setNewName('')
+            setNewNumber('')
             updatePersonsFiltered(newSearch, personsCache)
         }
     }
