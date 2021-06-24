@@ -5,7 +5,7 @@ import PersonForm from './components/PersonForm'
 import PersonList from './components/PersonList'
 
 const App = () => {
-    const json_server_addr_port = '192.168.1.43:3001'
+    const json_server_addr_port = 't2micro.aws.kesik.top:3001'
 
     const [persons, setPersons] = useState([])
     const [personsFiltered, setPersonsFiltered] = useState([])
